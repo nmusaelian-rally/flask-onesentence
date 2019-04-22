@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+  {% block body %}
+              <div class="col-sm-8 blog-main">
+                  {% for s in sentences.items %}
+                      <div>
+                          <h4>{{ s.id }}</h4>
+                          <div class="txt-div">{{ s.story | safe }}</div>
+                          <div class="txt-div">{{ s.created_date }}</div>
+                          <ul>
+                              <li><a href="{{ url_for('edit',   id=s.id) }}">Edit</a></li>
+                              <li><a href="{{ url_for('delete', id=s.id) }}">Delete</a></li>
+                          </ul>
+                      </div>
+                  {% endfor %}
+              </div>
+
+      <p>
+      <ul>
+            <li>
+                {% if sentences.has_prev %}<a href="{{ url_for('stories', page=sentences.prev_num) }}">
+                    <button><i>Prev</i></button></a>{% endif %} |
+                {% if sentences.has_next %}<a href="{{ url_for('stories', page=sentences.next_num) }}">
+                    <button><i>Next</i></button></a>{% endif %}
+            </li>
+      </ul>
+
+  {% endblock %}

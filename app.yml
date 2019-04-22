@@ -1,0 +1,6 @@
+env_variables:
+    APP_SECRET:    "whitershadeofpale"
+    DATABASE_URL:  "postgresql://postgres:postgres@localhost:5432/onesentencestories"
+    PORT:          5001
+    FLASK_ENV:     development
+    PYTHONUNBUFFERED: 1
