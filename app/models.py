@@ -8,7 +8,7 @@ class Onesentence(db.Model):
     story        = db.Column(db.Text, nullable=False)
     created_date = db.Column(db.DateTime(timezone=True))
 
-    def __init__(self, story, title):
+    def __init__(self, story):
         self.story = story
         self.created_date = datetime.datetime.utcnow().strftime("%Y-%m-%d %H:%M:%S")
 
