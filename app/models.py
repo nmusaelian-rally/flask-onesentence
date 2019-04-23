@@ -1,4 +1,4 @@
-from app.create_app import db
+from app.appbase import db
 import datetime
 
 class Onesentence(db.Model):

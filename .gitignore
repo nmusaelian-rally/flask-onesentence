@@ -16,6 +16,8 @@ _mailinglist
 .idea/
 docs/_build/
 __pycache__/
+*.pyc
+*.log
 # Coverage reports
 htmlcov/
 .coverage
