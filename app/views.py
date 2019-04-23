@@ -1,4 +1,4 @@
-from app.app import app, db
+from app.create_app import app, db
 from flask import request, redirect, url_for, render_template
 
 from handlers.add      import addStory

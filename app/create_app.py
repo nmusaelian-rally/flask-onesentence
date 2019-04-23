@@ -1,5 +1,4 @@
 import os, sys
-
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 from helpers.parse_envars import AppSettings
@@ -17,5 +16,3 @@ try:
     print("got result from query of SELECT 1 ...")
 except Exception as ex:
     print("problem with d.session.execute", ex)
-
-
