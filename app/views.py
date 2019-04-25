@@ -1,10 +1,10 @@
 from app.appbase import app, db
 from flask import request, redirect, url_for, render_template
 
-from handlers.add      import addStory
+from handlers.add import addStory
 from handlers.show_all import showAll
-from handlers.edit     import editStory
-from handlers.delete   import deleteStory
+from handlers.edit import editStory
+from handlers.delete import deleteStory
 
 @app.route('/')
 def index():
