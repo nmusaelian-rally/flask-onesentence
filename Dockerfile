@@ -6,11 +6,17 @@ RUN apt-get update -y && \
     apt-get install -y nginx uwsgi uwsgi-plugin-python3 && \
     apt-get install -y vim
 
+
 RUN wget https://dl.google.com/cloudsql/cloud_sql_proxy.linux.amd64 -O cloud_sql_proxy
 
 ENV GOOGLE_APPLICATION_CREDENTIALS="/gcloud-stuff/application_default_credentials.json"
 ENV DATABASE_URL="postgresql://postgres:postgres@/yogi?host=/cloudsql/saas-rally-dev:us-west2:yogi-berra"
 ENV APP_SECRET="whitershadeofpale"
+ENV PROJECT_ID="saas-rally-dev"
+ENV LOCATION_ID="global"
+ENV KEY_RING_ID="yogi"
+ENV CRYPTOKEY_ID="berra"
+
 
 RUN mkdir -p /cloudsql/saas-rally-dev:us-west2:yogi-berra && \
      chmod 777 /cloudsql && \
