@@ -1,10 +1,10 @@
-FROM ubuntu:18.10
+FROM quay.io/rallysoftware/centos
 
-RUN apt-get update -y && \
-    apt-get install -y wget -q && \
-    apt-get install -y python3-pip python3-dev && \
-    apt-get install -y nginx uwsgi uwsgi-plugin-python3 && \
-    apt-get install -y vim
+RUN yum update -y && \
+    yum install -y wget -q && \
+    yum install -y python3-pip python3-dev && \
+    yum install -y nginx uwsgi uwsgi-plugin-python3 && \
+    yum install -y vim
 
 
 RUN wget https://dl.google.com/cloudsql/cloud_sql_proxy.linux.amd64 -O cloud_sql_proxy
