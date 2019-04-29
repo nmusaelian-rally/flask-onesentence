@@ -1,5 +1,11 @@
+import os
 from google.cloud import kms_v1
 from google.cloud.kms_v1 import enums
+
+PROJECT_ID   = os.getenv('PROJECT_ID')
+LOCATION_ID  = os.getenv('LOCATION_ID')
+KEY_RING_ID  = os.getenv('KEY_RING_ID')
+CRYPTOKEY_ID = os.getenv('CRYPTOKEY_ID')
 
 def encrypt_symmetric(project_id, location_id, key_ring_id, crypto_key_id,
                       plaintext):

@@ -5,7 +5,7 @@ class Onesentence(db.Model):
     __tablename__ = 'onesentence'
 
     id           = db.Column(db.Integer, primary_key=True)
-    story        = db.Column(db.Text, nullable=False)
+    story        = db.Column(db.LargeBinary, nullable=False)
     stars        = db.Column(db.Integer)
     created_date = db.Column(db.DateTime(timezone=True))
 

@@ -2,7 +2,7 @@
 
   {% block body %}
               <div class="col-sm-8 blog-main">
-                  {% for s in sentences.items %}
+                  {% for s in sentences %}
                       <div>
                           <h4>{{ s.id }}</h4>
                           <div class="txt-div">{{ s.story | safe }}</div>

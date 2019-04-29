@@ -1,12 +1,6 @@
-import os
 from flask import render_template
 from app.models import Onesentence
-from helpers.encdec import encrypt_symmetric
-
-PROJECT_ID   = os.getenv('PROJECT_ID')
-LOCATION_ID  = os.getenv('LOCATION_ID')
-KEY_RING_ID  = os.getenv('KEY_RING_ID')
-CRYPTOKEY_ID = os.getenv('CRYPTOKEY_ID')
+from helpers.encdec import encrypt_symmetric, PROJECT_ID, LOCATION_ID, KEY_RING_ID, CRYPTOKEY_ID
 
 def addStory(db, request):
     if request.method == 'GET':
