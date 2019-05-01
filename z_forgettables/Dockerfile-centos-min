@@ -1,0 +1,25 @@
+FROM quay.io/rallysoftware/centos:stable
+USER root
+RUN rpm --rebuilddb
+RUN yum update -y; yum clean all
+
+RUN yum install -y wget -q
+RUN yum groupinstall -y "development tools"
+RUN yum install -y libffi-devel
+RUN yum install -y zlib-devel bzip2-devel openssl-devel expat-devel
+
+RUN wget http://python.org/ftp/python/3.7.3/Python-3.7.3.tar.xz
+RUN tar xf Python-3.7.3.tar.xz
+WORKDIR Python-3.7.3
+RUN ./configure --prefix=/usr/local --enable-shared LDFLAGS="-Wl,-rpath /usr/local/lib"
+RUN make && make altinstall
+
+WORKDIR /
+COPY ./requirements.txt /requirements.txt
+RUN pip3.7 install -r requirements.txt
+COPY ./sleeper.sh /sleeper.sh
+
+# RUN yum remove libffi-devel zlib-devel bzip2-devel openssl-devel expat-devel
+# RUN yum groupremove "Development tools"
+
+ENTRYPOINT [ "/bin/bash", "/sleeper.sh"]
