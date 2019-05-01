@@ -1,0 +1,11 @@
+/gcloud-stuff/application_default_credentials.json
+env_injectables
+docker_env
+Dockerfile
+.dockercfg
+dockercfg
+target_file
+.git
+.cache
+/z_forgettables
+README.md
